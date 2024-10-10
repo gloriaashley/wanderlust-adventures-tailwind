@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #3a0ca3;
+    --secondary-color: #4361ee;
+    --accent-color: #4cc9f0;
+    --text-color: #f1faee;
+    --bg-color: #000814;
+    --card-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background: rgba(58, 12, 163, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  
+  .search-container {
+    position: relative;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar:focus {
+    width: 300px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 201, 240, 0.3);
+  }
+  
+  search-bar::placeholder {
+    color: rgba(241, 250, 238, 0.7);
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+  }
+  
+  .slideshow {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+  }
+  
+  .slideshow img:first-child {
+    opacity: 1;
+  }
+  
+  @keyframes slideshow {
+    0% {
+      opacity: 1; /* Start fully visible */
+    }
+    20% {
+      opacity: 1; /* Fully visible */
+    }
+    25% {
+      opacity: 0; /* Start fading out */
+    }
+    80% {
+      opacity: 0; /* Remain invisible */
+    }
+    85% {
+      opacity: 1; /* Start fading in */
+    }
+    100% {
+      opacity: 1; /* Fully visible at the end */
+    }
+  }
+  
+  .slideshow img:nth-child(1) {
+    animation: slideshow 12s infinite; /* The first image */
+  }
+  .slideshow img:nth-child(2) {
+    animation: slideshow 12s infinite 4s; /* The second image starts 4 seconds later */
+  }
+  .slideshow img:nth-child(3) {
+    animation: slideshow 12s infinite 8s; /* The third image starts 8 seconds later */
+  }
+  
+  .agency-name {
+    background: rgba(67, 97, 238, 0.3);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  .main-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .side-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  footer {
+      text-align: center;
+      padding: 20px 0;
+      cursor: pointer;
+    }
+  
+  
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    
+      .sidebar {
+        width: 100%;
+        display: none;
+      }
+    
+      .main-content {
+        width: 100%;
+      }
+      
+      }
+    
